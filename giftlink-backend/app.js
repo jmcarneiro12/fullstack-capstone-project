@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const pinoLogger = require('./logger');
+const searchRoutes = require('./routes/searchRoutes');
 
 const connectToDatabase = require('./models/db');
 const {loadData} = require("./util/import-mongo/index");
@@ -40,7 +41,7 @@ app.use(pinoHttp({ logger }));
 //{{insert code here}}
 
 // Search API Task 2: add the searchRoutes to the server by using the app.use() method.
-//{{insert code here}}
+app.use('/api/search', searchRoutes);
 
 
 // Global Error Handler
