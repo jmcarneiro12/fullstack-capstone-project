@@ -1,26 +1,125 @@
+/* Overall page styling for a cohesive and user-friendly design (Task 10) */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa; /* Light background */
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 /* Task 1: Style the search input field */
 .search-input {
-    /* Insert specific CSS properties here */
+    width: 75%;
+    margin-right: 1rem; /* Adicionado para espaçamento com o botão */
+    display: inline-block; /* Para que o input e o botão fiquem na mesma linha */
+    vertical-align: middle; /* Alinha verticalmente com o botão */
 }
 
 /* Task 2: Style the search button */
 .search-button {
-    /* Insert specific CSS properties here */
+    width: 20%;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none; /* Remove a borda padrão do bootstrap */
+    border-radius: 0.25rem; /* Mantém o border-radius do bootstrap */
+    padding: 0.375rem 0.75rem; /* Ajusta o padding para ser similar ao input */
+    vertical-align: middle; /* Alinha verticalmente com o input */
 }
 
 /* Task 3: Customize dropdown filters */
+/* Aplicamos aos selects que usam as classes form-control e my-1 do Bootstrap */
 .dropdown-filter {
-    /* Insert specific CSS properties here */
+    margin-bottom: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem; /* Mantém o border-radius do bootstrap */
+    padding: 0.375rem 0.75rem; /* Ajusta o padding */
 }
 
 /* Task 4: Style the age range slider */
+/* Aplicamos ao input range que usa a classe form-control-range do Bootstrap */
 .age-range-slider {
-    /* Insert specific CSS properties here */
+    width: 100%;
 }
 
 /* Task 5: Enhance search results cards appearance */
 .search-results-card {
-    /* Insert specific CSS properties here */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    overflow: hidden; /* Garante que o conteúdo respeite o border-radius */
+    margin-bottom: 1.5rem; /* Adiciona um pouco mais de espaço entre os cards */
 }
 
-/* Additional placeholders for tasks 6 to 10 */
+/* Task 7: Apply a hover effect to search results cards */
+.search-results-card {
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.search-results-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Task 8: Ensure images in search results are displayed appropriately */
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Altura fixa para consistência */
+    object-fit: cover; /* Recorta a imagem para preencher o espaço sem distorção */
+}
+
+/* Task 6: Style the “No products found” alert message */
+.alert.alert-info { /* Mais específico para evitar sobrescrever outros alerts */
+    background-color: #f8d7da; /* Bootstrap's alert-danger-light */
+    color: #721c24; /* Bootstrap's alert-danger-dark */
+    padding: 0.75rem 1.25rem;
+    margin-top: 1rem;
+    border: 1px solid transparent; /* Adiciona uma borda transparente para consistência */
+    border-radius: 0.25rem;
+}
+
+/* Task 9: Create a responsive layout for search results on various devices */
+@media (max-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 100%; /* Faz com que a coluna ocupe 100% da largura */
+        max-width: 100%;
+    }
+
+    .search-input-section .form-group {
+        display: flex; /* Para alinhar o input e o botão lado a lado em mobile */
+        margin-bottom: 1rem;
+    }
+
+    .search-input {
+        width: 70%; /* Ajusta a largura para mobile */
+        margin-right: 0.5rem; /* Reduz a margem para mobile */
+    }
+
+    .search-button {
+        width: 28%; /* Ajusta a largura para mobile */
+    }
+
+    .search-results-card {
+        margin-bottom: 1rem; /* Menos espaço entre os cards em mobile */
+    }
+
+    .card-img-top {
+        height: 150px; /* Reduz a altura da imagem em mobile */
+    }
+
+    /* Ajuste do tamanho do texto para melhor leitura em telas menores */
+    h5 {
+        font-size: 1.1rem;
+    }
+    p {
+        font-size: 0.9rem;
+    }
+    label {
+        font-size: 0.95rem;
+    }
+    .btn {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.6rem;
+    }
+}
